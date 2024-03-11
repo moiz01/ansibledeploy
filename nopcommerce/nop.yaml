@@ -37,8 +37,8 @@
     - name: Create a directory if it does not exist
       ansible.builtin.file:
         path: 
-          - /var/nopCommerce/bin
-          - /var/nopCommerce/logs
+          - /var/nopCommerce/published/bin
+          - /var/nopCommerce/publishedlogs
         state: directory
     
     - name: add the user
@@ -48,7 +48,7 @@
   
     - name: Change file ownership, group and permissions
       ansible.builtin.file:
-        path: /var/nopCommerce
+        path: /var/nopCommerce/published
         owner: nop
         group: nop
         mode: '0755'
